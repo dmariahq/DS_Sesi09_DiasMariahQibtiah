@@ -28,11 +28,15 @@ describe('Swag Labs', () => {
     })
 
     it('should login error with problem_user credentials', async () => {
-        // TODO: akan dibuatkan scenario negative case
+        // TODO: akan dibuatkan scenario negative case 
+        
     })
 
     it('should login error with performance_glitch_user credentials', async () => {
-        // TODO: akan dibuatkan scenario negative case
+        // TODO: akan dibuatkan scenario negative case 
+        await LoginPage.open()
+        await LoginPage.login()
+        await LoginPage.validatePerformanceGlitchUserCredentials()
     })
 
     it('should login error with error_user credentials', async () => {

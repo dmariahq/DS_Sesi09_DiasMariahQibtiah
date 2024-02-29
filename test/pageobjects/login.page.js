@@ -28,7 +28,16 @@ class LoginPage extends Page {
 
     async validateLockedOutUserError () {
         expect(this.errorLockedOutUser).toBeDisplayed()
-    }
+    } 
+
+    async validatePerformanceGlitchUserCredentials () {
+        console.log (`USERNAME: ${process.env.PERFORMANCE_GLITCH_USER}`)
+        console.log (`PASSWORD: ${process.env.PASSWORD_SAUCEDEMO}`)
+        await this.fieldUsername.setValue('process.env.PERFORMANCE_GLITCH_USER');
+        await this.fieldPassword.setValue('process.env.PASSWORD_SAUCEDEMO');
+        await this.buttonLogin.click();
+        expect(this.PerformanceGlitchUser).toBeDisplayed()
+    } 
 
     /**
      * overwrite specific options to adapt it to page object
